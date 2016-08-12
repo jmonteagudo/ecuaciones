@@ -19,8 +19,13 @@ public class IntegralDeArea {
 	 */
 	public Double calcular(Ecuacion ecuacion, Double inicio,
 			Double fin, Double incremento) {
+		
+		double resultado = 0D;
+		for(double i = inicio; i<=fin; i=i+incremento){
+			resultado = ((ecuacion.resolver(i)) * (i - (i-incremento)));
+		}
 
-		throw new RuntimeException("No implementado");
+		return resultado;
 
 	}
 

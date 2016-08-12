@@ -1,11 +1,16 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Representa una ecuación cuadrática del tipo
  * f(x) = a × x^2 + b × x + c
  *
  */
 public class EcuacionCuadratica implements Ecuacion {
+	
+	EcuacionPolinomica cuadratica;
 
 	/**
 	 * Constructor parametrizado
@@ -16,8 +21,14 @@ public class EcuacionCuadratica implements Ecuacion {
 	 *
 	 */
 	public EcuacionCuadratica(Double a, Double b, Double c) {
-
-		throw new RuntimeException("No implementado");
+		
+		List<Double> coeficientes = new ArrayList<Double>();
+		
+		coeficientes.add(c);
+		coeficientes.add(b);
+		coeficientes.add(a);
+		
+		cuadratica = new EcuacionPolinomica(coeficientes);
 
 	}
 
@@ -28,8 +39,8 @@ public class EcuacionCuadratica implements Ecuacion {
 	 *
 	 */
 	public Double resolver(Double x) {
-
-		throw new RuntimeException("No implementado");
+		
+		return (cuadratica.resolver(x));
 
 	}
 

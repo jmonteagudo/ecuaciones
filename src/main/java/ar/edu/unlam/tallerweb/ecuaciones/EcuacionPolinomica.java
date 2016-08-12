@@ -8,6 +8,8 @@ import java.util.List;
  *
  */
 public class EcuacionPolinomica implements Ecuacion {
+	
+	List<Double> coeficientes;
 
 	/**
 	 * Constructor parametrizado
@@ -28,7 +30,8 @@ public class EcuacionPolinomica implements Ecuacion {
 	 */
 	public EcuacionPolinomica(List<Double> coeficientes) {
 
-		throw new RuntimeException("No implementado");
+		//throw new RuntimeException("No implementado");
+		this.coeficientes = coeficientes;
 
 	}
 
@@ -40,8 +43,18 @@ public class EcuacionPolinomica implements Ecuacion {
 	 */
 	public Double resolver(Double x) {
 
-		throw new RuntimeException("No implementado");
-
+		double resultado = 0D;
+		// El primer valor de la lista es el coeficiente independiete y no se multiplica por ningún x
+		resultado  = coeficientes.get(0);
+		
+		for(int i=1; i<coeficientes.size(); i++){
+			double potencia = x;
+			for(int j=1; j<i; j++){
+				potencia *= x;
+			}
+			resultado += coeficientes.get(i) * potencia;
+		}
+		return resultado;
 	}
-
+	
 }

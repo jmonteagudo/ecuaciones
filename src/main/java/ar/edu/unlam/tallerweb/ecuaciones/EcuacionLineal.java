@@ -1,10 +1,18 @@
 package ar.edu.unlam.tallerweb.ecuaciones;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Representa una ecuación lineal del tipo f(x) = m × x + b
  *
  */
 public class EcuacionLineal implements Ecuacion {
+	
+	/*private double m;
+	private double b;*/
+	
+	EcuacionPolinomica lineal;
 
 	/**
 	 * Constructor parametrizado
@@ -15,7 +23,18 @@ public class EcuacionLineal implements Ecuacion {
 	 */
 	public EcuacionLineal(Double m, Double b) {
 
-		throw new RuntimeException("No implementado");
+		//throw new RuntimeException("No implementado");
+		/*this.m = m;
+		this.b = b;*/
+		
+		List<Double> coeficientes = new ArrayList<Double>();
+		
+		coeficientes.add(b);
+		coeficientes.add(m);
+		
+		lineal = new EcuacionPolinomica(coeficientes);
+		
+		
 
 	}
 
@@ -27,7 +46,8 @@ public class EcuacionLineal implements Ecuacion {
 	 */
 	public Double resolver(Double x) {
 
-		throw new RuntimeException("No implementado");
+		//throw new RuntimeException("No implementado");
+		return(lineal.resolver(x));
 
 	}
 
